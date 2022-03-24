@@ -5,4 +5,25 @@
     </ol>
     <hr>
 
+
+
+    <div id="error" *ngIf="isShow">
+      <h2>Hey, you have to enter something</h2>
+    </div>
+
+
+
+      <input #newMovie (keyup.enter)="addMovie(newMovie.value); newMovie.value=''" type="text" placeholder="Enter Movie Title Here">
+      <!-- <input #newMovie (click)="true" type="text" placeholder="Enter Movie Title Here"> -->
+      <!-- <button (click)="addMovie(newMovie.value); newMovie.value=''">Add</button> -->
+
+      <button (click)="addMovie(newMovie.value);toggleErrorMsg(newMovie.value);newMovie.value=''">Add</button>
+      <!-- <button (click)="addMovie(newMovie.value);newMovie.value='';">Add</button> -->
+      <!-- <button (click)="addMovie(newMovie.value);makeVisible();">Add</button> -->
+      <!-- <p>{{newMovie.value}}</p> -->
+      <!-- <p *ngIf="!newMovie.value">
+        Hey, enter something
+      </p> -->
+
+
  </div>
